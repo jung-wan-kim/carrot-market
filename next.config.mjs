@@ -15,7 +15,7 @@ const nextConfig = {
     ];
   },
   // 추가된 부분
-  distDir: 'build',
+//   distDir: 'build',
 };
 
 export default nextConfig;
