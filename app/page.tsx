@@ -11,11 +11,10 @@ export default function Home() {
     { id: 6, title: '닌텐도 스위치', price: 300000, location: '대구 수성구', likes: 8, image: 'https://m.media-amazon.com/images/I/61-PblYntsL._AC_UY436_FMwebp_QL65_.jpg' },
     { id: 7, title: 'LG 그램', price: 1200000, location: '광주 서구', likes: 2, image: 'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UY436_FMwebp_QL65_.jpg' },
     { id: 8, title: '소니 WH-1000XM4', price: 280000, location: '대전 유성구', likes: 5, image: 'https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_UY436_FMwebp_QL65_.jpg' },
-    { id: 9, title: '캐논 DSLR', price: 500000, location: '울산 남구', likes: 3, image: 'https://m.media-amazon.com/images/I/81YTWKEiTVL._AC_UY436_FMwebp_QL65_.jpg' },
+    { id: 9, title: '캐논 DSLR', price: 500000, location: '울산 남구', likes: 3, image: 'https://m.media-amazon.com/images/I/71EWRyqzw0L._AC_UY436_FMwebp_QL65_.jpg' },
     { id: 10, title: '삼성 QLED TV', price: 1300000, location: '세종시', likes: 7, image: 'https://m.media-amazon.com/images/I/71LJJrKbezL._AC_UY436_FMwebp_QL65_.jpg' },
-    { id: 11, title: '다이슨 청소기', price: 400000, location: '경기 성남시', likes: 6, image: 'https://m.media-amazon.com/images/I/71SYsGLGbdL._AC_UY436_FMwebp_QL65_.jpg' },
-    { id: 12, title: '필립스 면도기', price: 150000, location: '강원 춘천시', likes: 4, image: 'https://m.media-amazon.com/images/I/71QMkXmLVCL._AC_UY436_FMwebp_QL65_.jpg' },
-    { id: 13, title: '애플 워치', price: 350000, location: '충북 청주시', likes: 5, image: 'https://m.media-amazon.com/images/I/71XMTLtZd5L._AC_UY436_FMwebp_QL65_.jpg' },
+    { id: 11, title: '필립스 면도기', price: 150000, location: '강원 춘천시', likes: 4, image: 'https://m.media-amazon.com/images/I/71QMkXmLVCL._AC_UY436_FMwebp_QL65_.jpg' },
+    { id: 12, title: '애플 워치', price: 350000, location: '충북 청주시', likes: 5, image: 'https://m.media-amazon.com/images/I/71XMTLtZd5L._AC_UY436_FMwebp_QL65_.jpg' },
   ];
 
   return (
