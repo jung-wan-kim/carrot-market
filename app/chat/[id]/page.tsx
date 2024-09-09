@@ -25,8 +25,20 @@ export default function ChatPage({ params }: { params: { id: string } }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    setVh();
+    window.addEventListener('resize', setVh);
+
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
   return (
-    <div className="flex flex-col h-screen pt-14"> {/* pt-14 추가 */}
+    <div className="flex flex-col h-screen pt-14" style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
       <header className="bg-carrot-orange text-white p-4 fixed top-0 left-0 right-0 z-10">
         <Link href={`/detail/${params.id}`} className="font-bold">← 뒤로 가기</Link>
       </header>
