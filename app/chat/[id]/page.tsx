@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, KeyboardEvent } from 'react';
+import { useState, KeyboardEvent, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function ChatPage({ params }: { params: { id: string } }) {
   const [messages, setMessages] = useState<{ text: string; sender: 'user' | 'seller' }[]>([]);
   const [inputMessage, setInputMessage] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const handleSendMessage = () => {
     if (inputMessage.trim()) {
@@ -20,12 +21,16 @@ export default function ChatPage({ params }: { params: { id: string } }) {
     }
   };
 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
   return (
     <div className="flex flex-col h-screen">
-      <header className="bg-carrot-orange text-white p-4">
+      <header className="bg-carrot-orange text-white p-4 fixed top-0 left-0 right-0 z-10">
         <Link href={`/detail/${params.id}`} className="font-bold">← 뒤로 가기</Link>
       </header>
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-4 pt-16 pb-20">
         {messages.map((message, index) => (
           <div key={index} className={`mb-2 ${message.sender === 'user' ? 'text-right' : 'text-left'}`}>
             <span className={`inline-block p-2 rounded-lg ${message.sender === 'user' ? 'bg-carrot-orange text-white' : 'bg-gray-200'}`}>
@@ -33,8 +38,9 @@ export default function ChatPage({ params }: { params: { id: string } }) {
             </span>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
-      <div className="p-4 border-t">
+      <div className="p-4 border-t fixed bottom-0 left-0 right-0 bg-white">
         <div className="flex">
           <input
             type="text"
